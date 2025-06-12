@@ -20,7 +20,7 @@ request = pc.makeRequestRSpec()
 
 
 node_type = "m400"
-node_number = 1
+node_number = 2
 
 # Params
 pc.defineParameter("node_type", "Hardware specs of the nodes to use (tested on xl170 on Utah, rs440 on Mass, m400 on OneLab).",
