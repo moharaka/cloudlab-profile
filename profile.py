@@ -18,11 +18,15 @@ pc = portal.Context()
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
 
+
+node_type = "m400"
+node_number = 1
+
 # Params
 pc.defineParameter("node_type", "Hardware specs of the nodes to use (tested on xl170 on Utah, rs440 on Mass, m400 on OneLab).",
-    portal.ParameterType.NODETYPE, "c220g5", advanced=False, groupId=None)
+    portal.ParameterType.NODETYPE, node_type, advanced=False, groupId=None)
 pc.defineParameter("num_nodes", "Number of nodes to use.",
- portal.ParameterType.INTEGER, 3, legalValues=[], advanced=False, groupId=None)
+ portal.ParameterType.INTEGER, node_number, legalValues=[], advanced=False, groupId=None)
 params = pc.bindParameters()
 if params.num_nodes < 1:
     pc.reportError(portal.ParameterError("You must choose a minimum of 1 node "))
